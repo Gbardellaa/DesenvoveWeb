@@ -7,6 +7,7 @@
 :root {
     --bg--cinza-escuro: #080808;
     --branco: #fff;
+    --magenta: #ff004f; 
 }
 body {
 background-color: var(--bg--cinza-escuro);
@@ -15,10 +16,102 @@ color:var(--branco);
 #header {
     width: 100%;
     height: 100vh;
-    background-image: url(../imagens/john_doe.pngs);
+    background-image: url(../imagens/john_doe.png);
     background-size: cover;
     background-position: center;
 }
 .container {
     padding: 10px 10%;
+}
+.logo {
+    width: 140px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: var(--magenta);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.texto-cabeçalho {
+    margin-top: 20%;
+    font-size: 30px;
+}
+.texto-cabeçalho h1 {
+    font-size: 60px;
+    margin-top: 20px;
+}
+.texto-cabeçalho h1 span {
+    color: var(--magenta);
+}
+/* *********SOBRE********* */
+#sobre {
+    padding: 80px 0;
+}
+.linha {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.sobre-coluna1 {
+    flex-basis: 35%;
+}
+.sobre-coluna1 img {
+    width: 100%;
+    border-radius: 15px;
+}
+.sobre-coluna2 {
+    flex-basis: 60%;
+}
+.subtitulo {
+    font-size: 60px;
+    font-weight: 600;
+    color: var(--branco);
+}
+.aba-titulos {
+    display: flex;
+    margin: 20px 0 40px;
+}
+.aba-links {
+    margin: 50px;  
+    font-size:18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.aba-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: var(--magenta);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.aba-links.link-ativo::after {
+    width: 100%;
 }
