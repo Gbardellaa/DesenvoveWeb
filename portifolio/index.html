@@ -37,20 +37,48 @@
                     <h1 class="subtítulo">Sobre</h1>
                     <p>Olá! Meu nome é John Doe e sou um desenvolvedor web apaixonado por criar soluções inovadoras e eficientes. Com experiência em diversas tecnologias e um olhar atento aos detalhes, meu objetivo é transformar ideias em realidade através de código limpo e funcional. Vamos trabalhar juntos para levar seu projeto ao próximo nível</p>
                     <div class="aba-titulos">
-                        <p class="aba-links link-ativo">Skills</p>
-                        <p class="aba-links">Experiência</p>
-                        <p class="aba-links">Formação</p>
+                        <p class="aba-links link-ativo" onclick="abriraba('skills')">Skills</p>
+                        <p class="aba-links" onclick="abriraba('experiencia')">Experiência</p>
+                        <p class="aba-links" onclick="abriraba('formacao')">Formação</p>
                     </div>
-                    <div class="aba-conteudos" id="Skills">
+                    <div class="aba-conteudos aba-ativa" id="skills">
                         <ul>
                             <li><span>UI/UX</span><br>Desenvolvimento de Interdace WEB/APP</li>
                             <li><span>Web Development</span><br>Desenvolvimento de Sites</li>
                             <li><span>APP Development</span><br>Desenvolvimento de Apps para Android e IOS</li>
                         </ul>
+                        </div>
+                        <div class="aba-conteudos" id="experiencia">
+                            <ul>
+                                <li><span>2021 - Até hoje</span><br>Professor Honorário no MIT</li>
+                                <li><span>2011 - 2021</span><br>CIO at IBM</li>
+                                <li><span>2004 - 2011</span><br>desenvolvedor na Google Inc.</li>
+                            </ul>
+                        </div>
+                        <div class="aba-conteudos" id="formacao">
+                            <ul>
+                                <li><span>2010</span><br>MBA no MIT</li>
+                                <li><span>2009</span><br>MBA Havard</li>
+                                <li><span>2003</span><br>Serviço Nacional de Aprendizagem Comercial (Senac) - Botucatu / SP</li>
+                            </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        var abaLinks = document.getElementsByClassName("aba-links");
+        var abaConteudos = document.getElementsByClassName("aba-conteudos");
+        function abriraba(abaNome) {
+            for (abaLink of abaLinks) {
+                abaLink.classList.remove("link-ativo"); /* Remove "link-ativo" de todos os links */
+            }
+            for (abaConteudo of abaConteudos) {
+                abaConteudo.classList.remove("aba-ativa"); /* Remove a classe "aba-ativa" de todos os conteudos */
+            }
+            event.currentTarget.classList.add("link-ativo"); /* Adiciona a classe "link-ativo" ao link clicado */
+            document.getElementyById(abaNome).classList.add("aba-ativa"); /* Adiciona a classe "aba-ativa" ao conteúdo correspondente(usando o ID passado como parâmetro) */ 
+        }
+    </script>
 </body>
 </html>

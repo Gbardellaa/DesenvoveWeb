@@ -113,5 +113,19 @@ nav ul li a:hover::after{
     transition: 0.5s;
 }
 .aba-links.link-ativo::after {
-    width: 100%;
+    width: 50%;
+}
+.aba-conteudos ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+.aba-conteudos ul li span {
+    color: var(--magenta);
+    font-size: 14px;
+}
+.aba-conteudos {
+    display: none;
+}
+.aba-conteudos.aba-ativa {
+    display: block;
 }
