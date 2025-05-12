@@ -69,15 +69,15 @@
     <script>
         var abaLinks = document.getElementsByClassName("aba-links");
         var abaConteudos = document.getElementsByClassName("aba-conteudos");
-        function abriraba(abaNome) {
-            for (abaLink of abaLinks) {
-                abaLink.classList.remove("link-ativo"); /* Remove "link-ativo" de todos os links */
+        function abriraba (abaNome){
+            for (abaLink of abaLinks){
+                abaLink.classList.remove("link-ativo");/* Remove a classe  link-ativo de todos os links */
             }
-            for (abaConteudo of abaConteudos) {
-                abaConteudo.classList.remove("aba-ativa"); /* Remove a classe "aba-ativa" de todos os conteudos */
+            for (abaConteudo of abaConteudos ){
+                abaConteudo.classList.remove("aba-ativa"); /* remove a classe "aba-ativa de todos os conteudos*/
             }
-            event.currentTarget.classList.add("link-ativo"); /* Adiciona a classe "link-ativo" ao link clicado */
-            document.getElementyById(abaNome).classList.add("aba-ativa"); /* Adiciona a classe "aba-ativa" ao conteúdo correspondente(usando o ID passado como parâmetro) */ 
+            event.currentTarget.classList.add("link-ativo");/* adiciona a classe link-ativo ao link clicado*/
+            document.getElementById(abaNome).classList.add("aba-ativa");/* adiciona a classe aba-ativa ao conteudo correspondente (usando o ID passado para o parametro)*/
         }
     </script>
 </body>
