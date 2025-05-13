@@ -9,6 +9,7 @@
     --branco: #fff;
     --magenta: #ff004f; 
     --bg-cinza:#262626;
+    --cinza-claro: #ABABAB;
 }
 body {
 background-color: var(--bg--cinza-escuro);
@@ -166,4 +167,125 @@ nav ul li a:hover::after{
 .list-servicos div:hover {
     background-color: #ff004f;
     transform: translateY(-10px);
+}
+/* *********PORTIFÓLIO********* */
+.portifolio {
+    padding: 50px 0; /* espaçamento interno de um elemento HTML, ou seja, a distância entre o conteúdo do elemento e a sua borda */ 
+}
+.lista-trabalhos {
+    display: grid; /* como um elemento HTML será exibido na página - Grid:Ativa o modelo de grade (divisão por colunas e linhas). */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+.trabalhos { 
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden; /* O conteúdo que ultrapassar os limites do elemento serão ocultados*/ 
+}.trabalhos img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer {
+    width: 100%;
+    height: 0%; /*Altura*/
+    background: linear-gradient(rgba(0,0,0,0.6), var(--magenta));/* Efeito de gradiente linear*/
+    border-radius: 10px;
+    position: absolute;
+    left: 0; /* Posição da margem */
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    transition: height 0.5s /*Transição de altura*/;
+}
+.layer h3 {
+    margin-bottom: 20px;
+}
+.layer a {
+    margin-top: 20px;
+    color: var(--magenta);
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background-color: var(--branco);
+    width: 60px;
+    height: 60px;
+    border-radius:50% /*arredondar borda do elemento;*/
+}
+.trabalhos:hover .layer {
+    height: 100%;
+}
+.trabalhos:hover img {
+    transform: scale(1.1);
+}
+.botao {
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border:1px solid var(--magenta);
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--branco)
+}
+/* *********CONTATO********* */
+.contato_esquerda {
+    flex-basis: 35%;
+}
+.contato_direita {
+    flex-basis: 65%;
+}
+.contato_esquerda p {
+    margin-top: 30px;
+}
+.contato_esquerda p i {
+    font-size: 25px;
+    margin-right: 15px;
+    color: var(--magenta);
+}
+.social {
+    margin-top: 30px;
+}
+.social a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: var(--cinza-claro);
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social a:hover {
+    color: var(--magenta);
+    transform: translateY(-5px);
+}
+.contato_direita form {
+    width: 100%;
+}
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background-color: var(--bg-cinza);
+    padding: 15px;
+    margin: 15px;
+    color: var(--branco);
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .botao2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.botao.botao2 {
+    display: inline-block;
+    background-color: var(--magenta);
 }
