@@ -11,6 +11,9 @@
     --bg-cinza:#262626;
     --cinza-claro: #ABABAB;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
 background-color: var(--bg--cinza-escuro);
 color:var(--branco);
@@ -288,4 +291,58 @@ form .botao2 {
 .botao.botao2 {
     display: inline-block;
     background-color: var(--magenta);
+}
+.copryght {
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    background-color: var(--bg-cinza);
+    font-weight: 300;
+    margin-top: 20px;
+}
+.copryght i {
+    color: var(--magenta);
+}
+/*--------------------------TELAS PEQUENAS-----------------------------------*/
+nav .fa-solid {
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    #header {
+        background-image: url(../imagens/cel_john_doe.png);
+    }
+    .texto-cabeçalho {
+        margin-top: 35%;
+        font-size:20px;
+    }
+    .texto-cabeçalho h1 {
+        font-size: 30px;
+    }
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul {
+        background-color: var(--magenta);
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;    /*Ajustar os elementos*/
+        transition: right 0.5s;
+    }
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fa-solid {
+        position: absolute;
+        top:25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+
 }

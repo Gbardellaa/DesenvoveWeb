@@ -8,18 +8,20 @@
     <script src="https://kit.fontawesome.com/5ca242fe38.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!--CABEÇALHO DO SITE-->
+    <!----------------------------CABEÇALHO DO SITE--------------------------->
     <div id="header">
         <div class="container">
             <nav> 
                 <img src="imagens/logo.png" class="logo" alt="Logotipo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Portfólio</a></li>
-                    <li><a href="#">Contato</a></li>
+                <ul id="menulateral">  <!--Lista não ordenada-->
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#portifolio">Portfólio</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <i class="fa-solid fa-xmark" onclick="fecharmenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="abrirmenu()"></i>
             </nav>
             <div class="texto-cabeçalho">
                 <p>UI/UX Designer</p>
@@ -27,7 +29,7 @@
             </div>
         </div>
     </div>
-    <!--SOBRE-->
+    <!-----------------------------------SOBRE------------------------------>
     <div id="sobre">
         <div class="container">
             <div class="linha">
@@ -67,7 +69,7 @@
             </div>
         </div>
     </div>
-    <!----------------------------------------------------------Serviços----------------------------------------------------->
+    <!----------------------------------SERVIÇO---------------------------->
     <div id="servicos">
         <div class="container">
             <h1 class="subtítulo">Serviços</h1>
@@ -126,7 +128,7 @@
             <a href="#" class="botao">Saiba mais</a>
         </div>
     </div>
-<!----------------------Portifólio-------------------------->
+<!----------------------CONTATO-------------------------->
     <div id="contato">
         <div class="container">
             <div class="linha">
@@ -151,6 +153,9 @@
                 </div>
             </div>
         </div>
+        <div class="copryght">
+            <p>copryght © 2025.Orgulhosamente feito com <i class="fa-solid fa-heart"></i> na Terra do Saci.</p>
+        </div>
     </div>
     <script>
         var abaLinks = document.getElementsByClassName("aba-links");
@@ -164,6 +169,15 @@
             }
             event.currentTarget.classList.add("link-ativo");/* adiciona a classe link-ativo ao link clicado*/
             document.getElementById(abaNome).classList.add("aba-ativa");/* adiciona a classe aba-ativa ao conteudo correspondente (usando o ID passado para o parametro)*/
+        }
+    </script>
+    <script>
+        var menu = document.getElementById("menulateral");
+        function abrirmenu() {
+            menu.style.right ="0"
+        }
+        function fecharmenu() {
+            menu.style.right ="-200px";
         }
     </script>
 </body>
