@@ -10,6 +10,8 @@
     --magenta: #ff004f; 
     --bg-cinza:#262626;
     --cinza-claro: #ABABAB;
+    --verde:#61b752;
+
 }
 html {
     scroll-behavior: smooth;
@@ -343,6 +345,9 @@ nav .fa-solid {
         left: 25px;
         cursor: pointer;
     }
-
-
+}
+#msg {
+    color: var(--verde);
+    margin-top: -40px;
+    display: block;
 }
