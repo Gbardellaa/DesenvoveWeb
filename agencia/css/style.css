@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+}
+#barra-navegacao {
+    position: sticky; /* Fixar barra de menu no topo da página*/
+    top: 0;
+    z-index: 10;
+}
+.navbar-brand img {
+    height: 40px;
+    padding-left: 20px;
+}
