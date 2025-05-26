@@ -5,12 +5,99 @@
 body {
     font-family: sans-serif;
 }
+:root {
+    --bg-nave-bar-roxo-claro: #a517ba;
+    --bg-nave-bar-roxo-escuro: #5f1782;
+    --bg-cinza-claro: #f8f9fa;
+    --branco: #ffff;
+    --traco-titulo: #7b1798;
+    --vermelho: #ff004f;
+}
 #barra-navegacao {
     position: sticky; /* Fixar barra de menu no topo da página*/
     top: 0;
     z-index: 10;
 }
+.navbar {
+    background-image: linear-gradient(to right, var(--bg-nave-bar-roxo-claro), var(--bg-nave-bar-roxo-escuro));
+    padding: 0;
+}
 .navbar-brand img {
     height: 40px;
     padding-left: 20px;
+}
+.navbar-nav li {
+    padding: 0 10px;
+}
+.navbar-nav li a {
+    color: var(--branco);
+    font-weight: 700;
+    float: right;
+    text-align: left;
+}
+/*-------------------------BANNER----------------------*/
+#banner {
+    background-image: linear-gradient(to right, var(--bg-nave-bar-roxo-claro),var(--bg-nave-bar-roxo-escuro));
+    color: var(--branco);
+    padding-top: 5%;
+}
+#banner a {
+    color: var(--branco);
+    text-decoration: none;
+}
+.titulo_promo {
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 100px;
+}
+.botao_play {
+    width: 45px;
+    margin: 20px;
+}
+.img-baixo {
+    width: 100%;
+}
+/*-------------------------SERVIÇOS----------------------*/
+#servicos {
+    padding: 80px 0;
+}
+.img-servicos {
+    width: 100px;
+    margin-top: 20px;
+}
+.servicos {
+    padding: 20px;
+}
+.servicos h4 {
+    padding: 5px;
+    margin-top: 25px;
+    text-transform:uppercase;
+}
+#servicos .btn-primary {
+    box-shadow: none;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, var(--bg-nave-bar-roxo-claro), var(--bg-nave-bar-roxo-escuro));
+}
+.titulo::after {
+    content: '';
+    background: var(--traco-titulo);
+    height: 10px;
+    width: 50px;
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    display: block;
+    transform: translateY(8px);
+}
+.titulo::before{
+    content: '';
+    background: var(--traco-titulo);
+    height: 5px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transform: translateY(63px);
 }
