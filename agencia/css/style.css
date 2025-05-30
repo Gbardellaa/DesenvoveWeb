@@ -5,6 +5,9 @@
 body {
     font-family: sans-serif;
 }
+html {
+    scroll-behavior: smooth;
+}
 :root {
     --bg-nave-bar-roxo-claro: #a517ba;
     --bg-nave-bar-roxo-escuro: #5f1782;
@@ -135,6 +138,7 @@ body {
     display: inline-block;
     font-size: 12px;
 }
+/*-------------------------REDES SOCIAIS----------------------*/
 #social {
     background-color: var(--bg-cinza-claro);
     padding: 50px 0;
@@ -145,4 +149,53 @@ body {
 }
 .social-ico a:hover img {
     transform: translateY(-10px);
+}
+/*----------------------RODAPÉ----------------------*/
+#rodape {
+    background-image: linear-gradient(to right, var(--bg-nave-bar-roxo-claro), var(--bg-nave-bar-roxo-escuro));
+    color: var(--branco)
+}
+.rodape-img {
+    width: 100%;
+}
+.cold-md-4.rodape-caixa {
+    padding: 50px 30px;
+    margin: 0;
+}
+.rodape-caixa img{
+    height: 60px;
+    margin-bottom: 20px;
+}
+.rodape-caixa .bi {
+    margin-right: 8px;
+    font-size: 25px;
+    width: 25px;
+}
+.rodape-caixa .formulario {
+    box-shadow: none;
+    border: none;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 0;
+    margin-top: 25px;
+    max-width: 250px;
+}
+.rodape-caixa .btn-primary {
+    box-shadow:  none;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, var(--bg-nave-bar-roxo-claro), var(--bg-nave-bar-roxo-escuro));
+    margin-top: 25px;
+}
+.copy {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-image: linear-gradient(to right, var(--bg-nave-bar-roxo-claro), var(--bg-nave-bar-roxo-escuro));
+    font-weight: 300;
+    margin-top: 20px;
+}
+.copy .bi{
+    color:var(--vermelho);
 }
