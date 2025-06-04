@@ -1,0 +1,343 @@
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    padding: 0.5rem 1rem;
+    border-top: none !important;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: none;
+}
+
+.navbar-brand img {
+    width: 100px;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    color: #000 !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3467e6 !important;
+}
+
+.btn-primary {
+    background-color: #3467e6;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #3467e6;
+}
+
+.bi-backpack2-fill {
+    font-size: 24px;
+    color: #0d6efd;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #ff6600;
+    font-size: 22px;
+    pointer-events: none;
+}
+
+.search-input {
+    padding-left: 2.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin: 0 12px;
+    color: #000 !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0056b3 !important;
+}
+
+.btn-primary {
+    background-color: #2d72d9;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #1b4f9c;
+}
+
+.bi-backpack-fill {
+    color: #2d72d9;
+}
+
+.bi-person-fill {
+    margin-right: 10px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Remove scrollbars */
+    height: 100%;
+    width: 100%;
+}
+
+.content h1 span {
+    color: gold;
+}
+
+.content .habilidades {
+    margin-top: 10px;
+    color: gold
+}
+
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.video-bg iframe {
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: linear-gradient(to right, rgba(0, 81, 153, 0.8), transparent);
+    z-index: -1;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 65vh;
+    color: white;
+    padding: 20px;
+}
+
+.content p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    max-width: 900px;
+}
+
+.search-box ::placeholder {
+    color: white;
+}
+
+.search-box {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 1em;
+    outline: none;
+    padding-left: 10px;
+}
+
+.search-box i {
+    color: white;
+    font-size: 1.2em;
+}
+
+.video-bg {
+    height: 80%;
+    width: 100%;
+}
+
+#cursos h1 {
+    margin-left: 35%;
+    color: gray;
+}
+
+.btn-nivel-ensino-medio-tecnico {
+    background-color: #C761CB;
+    border-color: #C761CB;
+    color: #fff;
+}
+
+.btn-nivel-ensino-medio-tecnico:hover {
+    background-color: #C761CB;
+    border-color: #C761CB;
+    color: #fff;
+}
+
+.btn-espec-tec {
+    background-color: #f5b91b;
+    border-color: #f5b91b;
+    color: #fff;
+}
+
+.btn-espec-tec:hover {
+    background-color: #f5b91b;
+    border-color: #f5b91b;
+    color: #fff;
+}
+
+.btn-tecnico {
+    background-color: #f5b91b;
+    border-color: #f5b91b;
+    color: #fff;
+}
+
+.btn-tecnico:hover {
+    background-color: #f5b91b;
+    border-color: #f5b91b;
+    color: #fff;
+}
+
+.btn-livre {
+    background-color: #ed7e36;
+    border-color: #ed7e36;
+    color: #fff;
+}
+
+.btn-livre:hover {
+    background-color: #ed7e36;
+    border-color: #ed7e36;
+    color: #fff;
+}
+
+.btn-idiomas {
+    background-color: #ed7e36;
+    border-color: #ed7e36;
+    color: #fff;
+}
+
+.btn-idiomas:hover {
+    background-color: #ed7e36;
+    border-color: #ed7e36;
+    color: #fff;
+}
+
+.btn-graduacao {
+    background-color: #3eaae0;
+    border-color: #3eaae0;
+    color: #fff;
+}
+
+.btn-graduacao:hover {
+    background-color: #3eaae0;
+    border-color: #3eaae0;
+    color: #fff;
+}
+
+.btn-pos-graduacao {
+    background-color: #4e4eea;
+    border-color: #4e4eea;
+    color: #fff;
+}
+
+.btn-pos-graduacao:hover {
+    background-color: #4e4eea;
+    border-color: #4e4eea;
+    color: #fff;
+}
+
+.btn-extensao {
+    background-color: #37c0a1;
+    border-color: #37c0a1;
+    color: #fff;
+}
+
+.btn-extensao:hover {
+    background-color: #37c0a1;
+    border-color: #37c0a1;
+    color: #fff;
+}
+
+.btn-jovem-aprendiz {
+    background-color: #46c3d8;
+    border-color: #46c3d8;
+    color: #fff;
+}
+
+.btn-jovem-aprendiz:hover {
+    background-color: #46c3d8;
+    border-color: #46c3d8;
+    color: #fff;
+}
+
+.btn-ead {
+    background-color: #fc65a0;
+    border-color: #fc65a0;
+    color: #fff;
+}
+
+.btn-ead:hover {
+    background-color: #fc65a0;
+    border-color: #fc65a0;
+    color: #fff;
+}
+
+.btn-escola {
+    background-color: #ce5d42;
+    border-color: #ce5d42;
+    color: #fff;
+}
+
+.btn-escola:hover {
+    background-color: #ce5d42;
+    border-color: #ce5d42;
+    color: #fff;
+}
+
+.col-md-15.caixa-curso {
+    padding: 50px 10px;
+    margin-top: 0%;
+}
