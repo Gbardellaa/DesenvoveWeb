@@ -1,6 +1,6 @@
 <?php
-    include("verifica.php");
-    include("../banco/conexao.php");
+    include ("verifica.php");
+    include ("../banco/conexao.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -71,7 +71,6 @@
                 <div class=" text-center border border-1 rounded p-2 m-3">
                     <h4>Dólar Hoje</h4><p><strong><?php include ('../cotacao.php'); ?></strong></p>
                 </div>
-            
             </div>
         </div>
         <hr>
@@ -85,53 +84,11 @@
                     <h2>Painel administrativo</h2>
                     <h3>Olá, <?php echo $_SESSION['login']; ?> </h3><a href="logout.php" class="btn btn-outline-secondary">Sair</a><br>
                 </div>
-                <div class="col-md-9 border-start border-1 text-center">
+                <div class="col-md-9 border-start border-1">
                     <p><a href="frmCadastrarUsuarios.php" class="btn btn-secondary">Cadastrar usuários</a> <a href="listarUsuarios.php" class="btn btn-secondary">Listar usuários</a> <a href="frmCadastrarNoticias.php" class="btn btn-secondary">Cadastrar notícias</a> <a href="listarNoticias.php" class="btn btn-secondary">Listar notícias</a></p>
-                <!--LISTA-->
-                    <h2>Usuários Cadastrados</h2>
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nome</th>
-                                <th>E-mail</th>
-                                <th>Login</th>
-                                <th>Senha</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                $sql ="SELECT * FROM usuarios";
-                                $usuarios = mysqli_query($conexao, $sql);
-                                if (mysqli_num_rows($usuarios) > 0) {
-                                    foreach($usuarios as $usuario) {
-                                        
-                            ?>
-                            <tr>
-                                <td><?= $usuario['idUsuario']?></td>
-                                <td><?= $usuario['nomeUsuario']?></td>
-                                <td><?= $usuario['emailUsuario']?></td>
-                                <td><?= $usuario['loginUsuario']?></td>
-                                <td><?="...".substr($usuario['senhaUsuario'], 10, 8)."..."?></td>
-                                <td>
-                                    <a href="verUsuario.php?idUsuario=<?= $usuario['idUsuario']?>" class="btn btn-secondary btn-sm">Ver</a>
-                                    <a href="frmEditarUsuario.php?idUsuario=<?= $usuario['idUsuario']?></td>" class="btn btn-success btn-sm">Editar</a>
-                                    <form action="frmApagarUsuarios.php" method="post">
-                                        <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit" name="apagarUsuario" value="<?= $usuario['idUsuario']?>" class="btn btn-danger btn-sm"> Excluir</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <?php
-                            } 
-                                } else {
-                                    echo "<h5> Nenhum usuario cadastrado</h5>";
-                                }
-                            ?>
-                        </tbody>
-                    </table>
-                
-                
+                    <h2>Editar Usuários</h2>
+
+
                 </div>
             </div>
 
