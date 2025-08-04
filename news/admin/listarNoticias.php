@@ -1,10 +1,9 @@
 <?php
-
-include ("verifica.php");
-include ("../banco/conexao.php");
-
+ 
+    include("verifica.php");
+    include("../banco/conexao.php");
+ 
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -50,7 +49,7 @@ include ("../banco/conexao.php");
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Painel Administrativo</a>
                 </li>
-
+ 
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Busca" aria-label="Search"/>
@@ -68,13 +67,13 @@ include ("../banco/conexao.php");
                 <img src="../imagens/logo.png" width="100px">
             </div>
             <div class="col-md-8">
-                
+               
             </div>
             <div class="col-md-2">
                 <div class=" text-center border border-1 rounded p-2 m-3">
                     <h4>Dólar Hoje</h4><p><strong><?php include ('../cotacao.php'); ?></strong></p>
                 </div>
-            
+           
             </div>
         </div>
         <hr>
@@ -88,27 +87,57 @@ include ("../banco/conexao.php");
                     <h2>Painel administrativo</h2>
                     <h3>Olá, <?php echo $_SESSION['login']; ?> </h3><a href="logout.php" class="btn btn-outline-secondary">Sair</a><br>
                 </div>
-                <div class="col-md-9 border-start border-1">
-                    <p><a href="frmCadastrarUsuarios.php" class="btn btn-secondary">Cadastrar usuários</a> <a href="listarUsuarios.php" class="btn btn-secondary">Listar usuários</a> <a href="frmCadastrarNoticias.php" class="btn btn-secondary">Cadastrar notícias</a> <a href="listarNoticias.php" class="btn btn-secondary">Listar notícias</a></p>
-                    <h2>Cadastro de Usuários</h2>
-                    <div class="col">
-                        <form action="inserirUsuarios.php" method="post">
-                            <label for="nomeCompleto" class="form-label">Nome Completo</label>
-                            <input type="text" name="nome" id="nome" class="form-control"><br>
-                            <label for="E-mail" class="form-label">E-mail</label>
-                            <input type="email" name="email" id="email" class="form-control"><br>
-                            <label for="login" class="form-label">Login</label><br>
-                            <input type="text" name="login" id="login" class="form-control"><br>
-                            <label for="senha" class="form-label">Senha</label>
-                            <input type="password" name="pwd" id="pwd" class="form-control"><br><br>
-                            <button type="submit" name="cadastroUsuario" class="btn btn-secondary">Cadastrar</button>
-                        </form>
-                    </div>
+                <div class="col-md-9 border-start border-1 text-center">
+                    <p><a href="frmCadastrarNoticias.php" class="btn btn-secondary">Cadastrar noticias</a> <a href="listarNoticias.php" class="btn btn-secondary">Listar noticias</a> <a href="frmCadastrarNoticias.php" class="btn btn-secondary">Cadastrar notícias</a> <a href="listarNoticias.php" class="btn btn-secondary">Listar notícias</a></p>
+                <!-- Lista -->
+                    <h2>Notícias Cadastrados</h2> 
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Titulo</th>
+                                    <th>Texto</th>
+                                    <th>Foto</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                    $sql = "SELECT * FROM noticias";
+                                    $noticias = mysqli_query($conexao, $sql);
+                                    if (mysqli_num_rows($noticias) > 0) {
+                                        foreach ($noticias as $noticia){
+                                       
+                                   
+                                ?>
+                                <tr>
+                                    <td><?= $noticia['idNoticia']?></td>
+                                    <td><?= $noticia['tituloNoticia']?></td>
+                                    <td><?= $noticia['textoNoticia']?></td>
+                                    <td><?= $noticia['fotoNoticia']?></td>
+                                    <td><?= "...".substr($noticia['textoNoticia'], 0, 100)."..."?></td>
+                                    <td><img src="<?= $noticia['fotoNoticia']?>" width="100px"></td>
+                                    <td>
+                                        <a href="verNoticia.php?idNoticia=<?= $noticia['idNoticia']?>" class="btn btn-secondary btn-sm">Ver</a>
+                                        <a href="frmEditarNoticia.php?idNoticia=<?= $noticia['idNoticia']?>" class="btn btn-success btn-sm">Editar</a>
+                                        <form action="frmApagarNoticia.php" method="post">
+                                        <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit" name="apagarNoticia" value="<?= $noticia['idNoticia']?>" class="btn btn-danger btn-sm">Excluir</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <?php
+                                }
+                                    } else {
+                                        echo "<h5>Nenhuma Notícia cadastrada</h5>";
+                                    }
+                                ?>
+                            </tbody>
+                        </table>
                 </div>
             </div>
-
-
-
+ 
+ 
+ 
             <hr>
         </div>
     </section>
@@ -118,8 +147,8 @@ include ("../banco/conexao.php");
             <p>Copyright © 2025. Orgulhosamente feito com <i class="bi bi-heart-fill"></i> na Terra do Saci.</p>
         </div>
     </section>
-
-    
+ 
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -74,7 +74,7 @@ include ("../banco/conexao.php");
                 <div class=" text-center border border-1 rounded p-2 m-3">
                     <h4>Dólar Hoje</h4><p><strong><?php include ('../cotacao.php'); ?></strong></p>
                 </div>
-            
+               
             </div>
         </div>
         <hr>
@@ -88,20 +88,25 @@ include ("../banco/conexao.php");
                     <h2>Painel administrativo</h2>
                     <h3>Olá, <?php echo $_SESSION['login']; ?> </h3><a href="logout.php" class="btn btn-outline-secondary">Sair</a><br>
                 </div>
-                <div class="col-md-9 border-start border-1">
+                <div class="col-md-9 border-start border-1 text-center">
                     <p><a href="frmCadastrarUsuarios.php" class="btn btn-secondary">Cadastrar usuários</a> <a href="listarUsuarios.php" class="btn btn-secondary">Listar usuários</a> <a href="frmCadastrarNoticias.php" class="btn btn-secondary">Cadastrar notícias</a> <a href="listarNoticias.php" class="btn btn-secondary">Listar notícias</a></p>
-                    <h2>Cadastro de Usuários</h2>
+                    <h2>Cadastrar Notícias</h2>
                     <div class="col">
-                        <form action="inserirUsuarios.php" method="post">
-                            <label for="nomeCompleto" class="form-label">Nome Completo</label>
-                            <input type="text" name="nome" id="nome" class="form-control"><br>
-                            <label for="E-mail" class="form-label">E-mail</label>
-                            <input type="email" name="email" id="email" class="form-control"><br>
-                            <label for="login" class="form-label">Login</label><br>
-                            <input type="text" name="login" id="login" class="form-control"><br>
-                            <label for="senha" class="form-label">Senha</label>
-                            <input type="password" name="pwd" id="pwd" class="form-control"><br><br>
-                            <button type="submit" name="cadastroUsuario" class="btn btn-secondary">Cadastrar</button>
+                        <?php
+                        if (isset($_SESSION['mensagem1'])) {
+                            echo "<div class='alert alert-success'>".$_SESSION['mensagem1']."</div>";
+                            unset($_SESSION['mensagem1']);
+                        }
+                        ?> 
+                        <!-- Enctype="multipart/form-data" para upload de arquivo -->
+                         <form action="inserirNoticias.php" method="post" Enctype="multipart/form-data">
+                            <label for="tituloNoticia" class="form-label">Título da Notícia</label>
+                            <input type="text" name="tituloNoticia" id="tituloNoticia" class="form-control">
+                            <label for="textoNoticia" class="form-label"> Texto da Notícia</label>
+                            <textarea name="textoNoticia" id="textoNoticia" rows="10" class="form-control">Insira o texto da notícia aqui...</textarea>
+                            <label for="fotoNoticia"> Foto da Notícia</label>
+                            <input type="file" name="fotoNoticia" id="fotoNoticia" class="form-control" accept="image/png, imgage/jpeg"><br>
+                            <button type="submit" name="cadastroNoticia" class="btn btn-secondary">Cadastrar</button>
                         </form>
                     </div>
                 </div>
