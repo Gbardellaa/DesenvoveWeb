@@ -1,9 +1,10 @@
 <?php
-include ("banco/conexao.php");
-?> 
+include("banco/conexao.php");
+?>
 <!DOCTYPE html>
+ 
 <html lang="pt-br">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +13,9 @@ include ("banco/conexao.php");
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
+ 
 </head>
-
+ 
 <body>
     <!-- Navegação -->
     <section id="navegacao">
@@ -71,19 +73,20 @@ include ("banco/conexao.php");
                     <img src="imagens/logo.png" width="100px">
                 </div>
                 <div class="col-md-8">
-
+                    
                 </div>
                 <div class="col-md-2">
                     <div class=" text-center border border-1 rounded p-2 m-3">
-                        <h4>Dólar Hoje</h4><p><strong><?php include "cotacao.php"; ?></strong></p>
+                        <h4>Dólar Hoje</h4>
+                        <p><strong><?php include "cotacao.php"?></strong></p>
                     </div>
-
+ 
                 </div>
             </div>
             <hr>
         </div>
     </section>
-    <!-- carossel -->
+    <!-- carousel -->
     <section id="carousel">
         <div class="container">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -115,44 +118,31 @@ include ("banco/conexao.php");
     <!-- ultimas notícias -->
     <section id="noticias">
         <div class="container">
-            <?php 
-                if (isset($_GET['idNoticia'])) {
+           <?php
+                if (isset($_GET ['idNoticia'])) {
                     $noticia_id = mysqli_real_escape_string($conexao, $_GET['idNoticia']);
                     $sql = "SELECT * FROM noticias WHERE idNoticia = '$noticia_id'";
                     $query = mysqli_query($conexao, $sql);
                     if (mysqli_num_rows($query) > 0) {
-                        $noticia = mysqli_fetch_assoc($query);
-                    }
-                } 
-
-                //echo "$numNoticias";
-                if($numNoticias > 0) {
-                    $i = 0;
-                    while($noticia = mysqli_fetch_assoc($query)) {
-                        if ($i % 4 == 0){ // A cada 4 noticias, abre uma nova linha (row)
-                            if($i > 0) echo "</div>"; //Fecha a linha anterior
-                            echo "<div class=\" row mb-4\">";
-                        }
-            ?> 
-                <div class="col-md-3">
-                    <img src="<?=substr($noticia['fotoNoticia'],3) ?>" class="d-block w-100 h-50">
-                    <h5><?=htmlspecialchars($noticia['tituloNoticia'])?></h5>
-                    <p><?=htmlspecialchars(substr($noticia['textoNoticia'], 0, 150)) ?> </p>
-                    <a class="icon-link icon-link-hover" href="detalhesNoticia.php?idNoticia=<?=$noticia['idNoticia']?>">
-                        Saiba mais
-                        <svg xmlns="http://www.w3.org/2000/svg" class="bi" viewBox="0 0 16 16" aria-hidden="true">
-                            <path
-                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                        </svg>
-                    </a>
+                        $noticia = mysqli_fetch_assoc($query);                
+           ?>
+           <div class="row align-itens-center">
+                 <div class="col">
+                    <h2><?= htmlspecialchars($noticia['tituloNoticia']) ?></h2>
+                    <img src="<?= substr($noticia['fotoNoticia'],3) ?>" class="d-block w-75">
+                    <p><?=nl2br($noticia['textoNoticia']) ?> </p>
+                </div>
+                <div>
+                    <a href="javascript:history.go(-1);" class="btn-outline-secondary">Voltar</a>
+                </div>
             </div>
-            <?php 
-                        $i++;
-                    } echo "</div>";
+            <?php
                 } else {
-                    echo "<h5> Nenhuma noticia cadastrada.</h5>";
+                    echo "<h5> Nenhuma noticias cadastradas.</h5>";
                 }
-            ?> 
+            }
+                ?>
+            </div>
             <hr>
         </div>
     </section>
@@ -162,10 +152,9 @@ include ("banco/conexao.php");
             <p>Copyright © 2025. Orgulhosamente feito com <i class="bi bi-heart-fill"></i> na Terra do Saci.</p>
         </div>
     </section>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
 </body>
-
+ 
 </html>
